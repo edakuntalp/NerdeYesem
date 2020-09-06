@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Nerde Yesem</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_fingerprint">Confirm Fingerprint</string>
+    <string name="desc_fingerprint">Please place your fingertip on the scanner</string>
+    <string name="note">(To enter the app, your device should have at least one fingerprint registered in device settings)</string>
+    <string name="note2">(To enter the app, your device should have at least one fingerprint registered in device settings)</string>
+    <string name="title_activity_home">Fingerprint</string>
+    <string name="activity_home_desc">You have successfully logged in</string>
+    <string name="activity_home_note">Close and re-open the app to see the fingerprint auth screen again</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_main2">RestaurantActivity_v2</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+</resources>

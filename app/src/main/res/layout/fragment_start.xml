@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_centerHorizontal="true">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/start_background"
+        android:clickable="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="150dp"
+            android:fontFamily="@font/squada_one"
+            android:lineSpacingExtra="8sp"
+            android:text="NERDE YESEM"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/colorAccent"
+            android:textSize="66sp"
+            android:textStyle="bold"
+            android:shadowColor="@color/colorPrimaryDark"
+            android:shadowDx="20"
+            android:shadowRadius="2"/>
+
+        <Button
+            android:id="@+id/button_start"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="450dp"
+            android:background="@drawable/circle"
+            android:drawableTop="@drawable/button_icon"
+            android:paddingTop="35dp" />
+
+        <TextView
+            android:id="@+id/textViewLabel2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button_start"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="5dp"
+            android:text="(Press the button to find restaurants near you)"
+            android:textAlignment="center"
+            android:textColor="@color/textPrimary"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+</FrameLayout>
