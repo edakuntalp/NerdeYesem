@@ -11,6 +11,8 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.nerdeyesem.Fragments.FragmentMap;
+import com.example.nerdeyesem.Fragments.FragmentRestaurants;
 import com.example.nerdeyesem.ui.main.SectionsPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 
@@ -53,8 +55,11 @@ public class MainActivity extends AppCompatActivity {
         bundle.putDouble("lat", latitude);
         bundle.putDouble("long",longitude);
         FragmentMap fragmentMap = new FragmentMap();
+        FragmentRestaurants fragmentRestaurants = new FragmentRestaurants();
         fragmentMap.setArguments(bundle);
+        fragmentRestaurants.setArguments(bundle);
         getSupportFragmentManager().beginTransaction().replace(R.id.view_pager, fragmentMap).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.view_pager, fragmentRestaurants).commit();
     }
 
     @Override

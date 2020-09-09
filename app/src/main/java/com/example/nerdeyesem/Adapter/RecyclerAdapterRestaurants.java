@@ -1,5 +1,6 @@
 package com.example.nerdeyesem.Adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,12 +23,15 @@ public class RecyclerAdapterRestaurants extends RecyclerView.Adapter<RecyclerAda
 
     private List<RestaurantModel> mrstCards;
     private AdapterView.OnItemClickListener mListener;
+    private Context mContext;
+
+    public RecyclerAdapterRestaurants(Context context,List<RestaurantModel> rstCards) {
+        mContext = context;
+        mrstCards = rstCards;
+    }
 
     public static class RecyclerViewHolder extends RecyclerView.ViewHolder{
-        public TextView name;
-        public TextView rating;
-        public TextView address;
-        public TextView webPage;
+        public TextView name,rating,address,webPage;
         public ImageView imageRes;
 
         public RecyclerViewHolder(@NonNull View itemView, final AdapterView.OnItemClickListener listener) {
@@ -41,24 +45,23 @@ public class RecyclerAdapterRestaurants extends RecyclerView.Adapter<RecyclerAda
         }
     }
 
-    public RecyclerAdapterRestaurants(List<RestaurantModel> rstCards) {
-        mrstCards = rstCards;
-    }
+
 
     @NonNull
     @Override
-    public RecyclerAdapterRestaurants.RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.restaurant_card, parent,false);
         RecyclerViewHolder rvh = new RecyclerViewHolder(v, mListener);
+        mContext = parent.getContext();
         return rvh;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerAdapterRestaurants.RecyclerViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerViewHolder holder, int position) {
 
         RestaurantModel currents_rstCards = mrstCards.get(position);
         holder.name.setText(currents_rstCards.getName());
-        holder.rating.setText(currents_rstCards.getUserRating().toString());
+        holder.rating.setText(currents_rstCards.getUserRating());
         holder.webPage.setText(currents_rstCards.getUrl());
         holder.address.setText(currents_rstCards.getAddress());
         Picasso.get().load(currents_rstCards.getFeaturedImage()).into(holder.imageRes);

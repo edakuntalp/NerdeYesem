@@ -1,19 +1,16 @@
 package com.example.nerdeyesem;
 
 import android.Manifest;
-import android.app.Activity;
-import android.app.FragmentManager;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.fingerprint.FingerprintManager;
 import android.os.CancellationSignal;
-import android.widget.TextView;
 
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.example.nerdeyesem.Fragments.FragmentStart;
 
 public class FingerprintHandler extends FingerprintManager.AuthenticationCallback {
     private Context context;
